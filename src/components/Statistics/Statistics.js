@@ -1,22 +1,22 @@
 import PropTypes from 'prop-types';
-import s from '../Stats/Stats.module.css';
+import s from '../Statistics/Statistics.module.css';
 
-const Statistics = ({ title, stats }) => {
+export default function Statistics({ title, stats }) {
   return (
     <section className={s.statistics}>
-      <h2 className="title">{title}</h2>
+      <h2 className={s.title}>{title}</h2>
 
       <ul className={s.statList}>
         {stats.map(item => (
-          <li key={item.id} className="item">
+          <li key={item.id} className={s.item}>
             <span className={s.label}>{item.label}</span>
-            <span className="percentage">{item.percentage} %</span>
+            <span className={s.percentage}>{item.percentage}%</span>
           </li>
         ))}
       </ul>
     </section>
   );
-};
+}
 
 Statistics.propTypes = {
   title: PropTypes.string,
@@ -28,5 +28,3 @@ Statistics.propTypes = {
     }),
   ),
 };
-
-export default Statistics;

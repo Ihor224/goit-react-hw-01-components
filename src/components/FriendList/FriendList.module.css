@@ -1,9 +1,18 @@
 .item {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
-  width: 200px;
+  margin-bottom: 10px;
+  width: 250px;
+  border: 1px solid grey;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   list-style: none;
+}
+
+.avatar {
+  margin-right: 15px;
 }
 
 .name {
@@ -11,17 +20,26 @@
 }
 
 .status {
-  width: 10px;
-  height: 10px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
 }
 
 .true {
   composes: status;
   background-color: green;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 
 .false {
   composes: status;
   background-color: red;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+ul {
+  margin: 10px, 0px, 0px, 0px;
+  padding: 0;
 }

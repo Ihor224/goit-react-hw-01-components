@@ -1,24 +1,24 @@
 import PropTypes from 'prop-types';
-import styles from '../FriendList/FriendList.module.css';
+import s from '../FriendList/FriendList.module.css';
 
-const FriendList = ({ friends }) => {
+export default function FriendList({ friends }) {
   return (
-    <ul className={styles.friendList}>
+    <ul className={s.friendList}>
       {friends.map(friend => (
-        <li key={friend.id} className={styles.item}>
-          <span className={styles[friend.isOnline]}>{friend.isOnline}</span>
+        <li key={friend.id} className={s.item}>
+          <span className={s[friend.isOnline]}>{friend.isOnline}</span>
           <img
-            className="avatar"
+            className={s.avatar}
             src={friend.avatar}
             alt={friend.name}
             width="48"
           />
-          <p className={styles.name}>{friend.name}</p>
+          <p className={s.name}>{friend.name}</p>
         </li>
       ))}
     </ul>
   );
-};
+}
 
 FriendList.propTypes = {
   friends: PropTypes.arrayOf(
@@ -30,5 +30,3 @@ FriendList.propTypes = {
     }),
   ),
 };
-
-export default FriendList;

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import s from '../Profile/Profile.module.css';
 
-const Profile = ({ name, tag, location, avatar, stats }) => {
+export default function Profile({ name, tag, location, avatar, stats }) {
   return (
     <div className={s.profile}>
       <div className={s.description}>
@@ -27,7 +27,7 @@ const Profile = ({ name, tag, location, avatar, stats }) => {
       </ul>
     </div>
   );
-};
+}
 
 Profile.propTypes = {
   name: PropTypes.string.isRequired,
@@ -40,5 +40,3 @@ Profile.propTypes = {
     likes: PropTypes.number.isRequired,
   }),
 };
-
-export default Profile;
